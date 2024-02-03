@@ -14,50 +14,49 @@ public class App
 {
     public static void main( String[] args ) throws Exception {
 		Scanner input = new Scanner(System.in);
-		JsonService jsonService = new JsonService();
-		SmallBattery smallBattery = new SmallBattery();
+//		JsonService jsonService = new JsonService();
 		LanternaUI ui = new LanternaUI();
 
 		// test ui
 		ui.runUI();
 
-		print();
-		String prompt = "";
-
-		while (!prompt.equals("exit")) {
-			smallBattery.toBattery();
-			printHome();
-			printTodayUnit(jsonService);
-			prompt = input.nextLine();
-			if(prompt.equals("")) {
-				// timeService timer start
-				Timer timer = new Timer();
-				timer.start();
-				printTimer(timer);
-				while (!prompt.equals("stop")) {
-					prompt = input.nextLine();
-					switch (prompt) {
-						case "":
-							// resume or suspend
-							if (!timer.isSuspend()) {
-								timer.suspend();
-								print("timer is suspended, press enter to resume ...");
-							} else {
-								timer.resume();
-								print("press enter to pause, stop to end ...");
-							}
-							break;
-						case "stop":
-							// finish and update log
-							timer.complete();
-							jsonService.update(timer);
-							break;
-						default:
-							break;
-					}
-				}
-			}
-		}
+//		print();
+//		String prompt = "";
+//
+//		while (!prompt.equals("exit")) {
+//			smallBattery.toBattery();
+//			printHome();
+//			printTodayUnit(jsonService);
+//			prompt = input.nextLine();
+//			if(prompt.equals("")) {
+//				// timeService timer start
+//				Timer timer = new Timer();
+//				timer.start();
+//				printTimer(timer);
+//				while (!prompt.equals("stop")) {
+//					prompt = input.nextLine();
+//					switch (prompt) {
+//						case "":
+//							// resume or suspend
+//							if (!timer.isSuspend()) {
+//								timer.suspend();
+//								print("timer is suspended, press enter to resume ...");
+//							} else {
+//								timer.resume();
+//								print("press enter to pause, stop to end ...");
+//							}
+//							break;
+//						case "stop":
+//							// finish and update log
+//							timer.complete();
+//							jsonService.update(timer);
+//							break;
+//						default:
+//							break;
+//					}
+//				}
+//			}
+//		}
 
 
 		// method 1 (for auto stop clock)

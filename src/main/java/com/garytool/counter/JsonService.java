@@ -22,7 +22,7 @@ public class JsonService {
     public JsonService() throws IOException {
         this.objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
-        this.log = readJson();
+//        this.log = readJson();
     }
 
     public Log readJson() throws IOException {
